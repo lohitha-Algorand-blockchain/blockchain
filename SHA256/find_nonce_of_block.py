@@ -24,7 +24,7 @@ start_time = time.time()
 while True:
     test_string = f"{block}{nonce}{data}"
     test_hash = hashlib.sha256(test_string.encode('utf-8')).hexdigest()
-    if test_hash.startswith(target_zeros):
+    if test_hash.endswith(target_zeros):
         print(f"Found Nonce: {nonce} => {test_hash}")
         print(f"Time Taken: {time.time() - start_time}")
         break
